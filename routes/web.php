@@ -11,8 +11,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/{locale?}', function ($locale = null) {
+	App::setLocale($locale);
+    return view('front.index');
+});
+
+Route::group(['prefix' => 'faculty'], function(){
+
+	Route::get('art', function(){
+		return view('front.faculty');
+	});
+
+});
+
+$allLanguages = ["en", "prs"];
+
+$lng = ( in_array( Request::segment(1), $allLanguages) ) ? Request::segment(1) : "";
+
+Route::group(['prefix' => $lng], function(){
+	App::setLocale((Request::segment(1)));
+	Route::get('/faculty', function(){
+		//dd(Request::segment(1));
+		return view('front.faculty');
+	});
+
 });
 
 Auth::routes();

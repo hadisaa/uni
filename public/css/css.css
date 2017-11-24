@@ -15,6 +15,12 @@ img {
 
 @media (min-width: 768px){
 
+	.navbar {
+		background-color: #ffffff;
+    	box-shadow: 0 1px 1px rgba(0,0,0,0.12);
+    	min-height: 50px;
+	}
+
 	.navbar-nav li.dropdown .dropdown-menu {
 	    min-width: 170px;
 	    width: auto;
@@ -271,6 +277,8 @@ img {
 	    margin: 0 0 18px;
 	    font-size: 20px;
 	}
+
+
 
 	.latest_news ul li{
 		padding: 0 0 6px;

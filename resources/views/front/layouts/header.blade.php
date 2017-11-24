@@ -4,7 +4,7 @@
                       <div class="col-md-5 topar_left">
                         <div class="logo">
                             <a href="#">
-                              <img src="img/unilogo.jpg">
+                              <img src="{{ asset('img/unilogo.jpg') }}">
                             </a>
                         </div>
                       </div>

@@ -1,12 +1,12 @@
-@extends('master.bootstrap')
+@extends('front.layouts.master')
 
 @section('title', 'Balkh University')
 
 @section('content')
 
-	@include('carousel')
+	@include('front.carousel')
 
-	 <div class="main_content">
+	<div class="main_content">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-12">
@@ -70,10 +70,15 @@
                                             </h4>
                                         </div>
                                         <div class="col-md-4">
-                                            
+                                              <a class="btn btn-lg btn-success" href="{{ @url('/faculty/art') }}"></a>
                                         </div>
                                         <div class="col-md-4">
-                                           
+                                            <h3> {{ __('message.title') }} </h3>
+                                            <p>
+                                                
+                                                {{ trans('v.name') }} 
+
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -194,6 +199,7 @@
                         </div>
                     </div>
                 </div>
-     </div>
+          </div>      
+    
 
 @endsection
