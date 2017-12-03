@@ -5,13 +5,13 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
+                        <ul class="navbar-nav {{ __('global.margin') }}">
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{ url('/') }}" >Home</a>
+                                <a class="nav-link" href="{{ url('/') }}" >{{ __('navbar.home') }}</a>
                             </li>
                             <li class="nav-item dropdown">
                                        <a class="nav-link dropdown-toggle" href="#" id="n" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         About
+                                         {{ __('navbar.about') }}
                                         </a>
                                 <div class="dropdown-menu">
                                   <a class="dropdown-item" href="#">History of Balkh University</a>
@@ -23,21 +23,23 @@
                             </li>
                             <li class="nav-item dropdown">
                                        <a class="nav-link dropdown-toggle" href="#" id="n" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         Faculties
+                                         {{ __('navbar.faculties') }}
                                         </a>
                                 <div class="dropdown-menu">
                                   <a class="dropdown-item" href="#">Literature</a>
                                   <a class="dropdown-item" href="#">Art</a>
                                   <a class="dropdown-item" href="#">Engineering</a>
-                                   <a class="dropdown-item" href="#">Computer Science</a>
+                                   <a class="dropdown-item" href="{{ url('/'.LaravelLocalization::getCurrentLocale().'/test') }}">
+                                    {{ \App\Test::where('locale', LaravelLocalization::getCurrentLocale())->first()->title }}
+                                   </a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" >Research</a>
+                                <a class="nav-link" href="#" >{{ __('navbar.research') }}</a>
                             </li>
                              <li class="nav-item dropdown">
                                        <a class="nav-link dropdown-toggle" href="#" id="n" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         Services
+                                         {{ __('navbar.services') }}
                                         </a>
                                 <div class="dropdown-menu">
                                   <a class="dropdown-item" href="#">ITCB</a>
@@ -47,7 +49,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                        <a class="nav-link dropdown-toggle" href="#" id="n" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         Student
+                                         {{ __('navbar.students') }}
                                         </a>
                                 <div class="dropdown-menu">
                                   <a class="dropdown-item" href="#">ITCB</a>

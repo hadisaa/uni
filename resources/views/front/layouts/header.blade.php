@@ -4,7 +4,7 @@
                       <div class="col-md-5 topar_left">
                         <div class="logo">
                             <a href="#">
-                              <img src="{{ asset('img/unilogo.jpg') }}">
+                              <img src="{{ asset(__('global.logo')) }}">
                             </a>
                         </div>
                       </div>
@@ -22,9 +22,13 @@
                         
                           <div class="language_bar clearfix">
                               <ul>
-                                  <li> <a href="#"> English </a> </li>
-                                  <li> <a href="#"> دری </a> </li>
-                                  <li> <a href="#">پشتو </a> </li>
+                                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+        <li>
+            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                {{ $properties['native'] }}
+            </a>
+        </li>
+    @endforeach
                                   <li><button class="btn btn-success">Search</button></li>
                                   <li><input type="text" name="" class="form-control"></li>
                               </ul>

@@ -11,7 +11,41 @@
 |
 */
 
-Route::get('/{locale?}', function ($locale = null) {
+
+
+
+// app/Http/routes.php
+
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+	Route::get('/', function()
+	{
+		return view('front.index');
+	});
+
+
+	Route::get('test',function(){
+		
+		
+		$locale = LaravelLocalization::getCurrentLocale();
+		$test = \App\Test::where('locale', $locale)->first();
+		//dd($test->title);
+		return view('front.test', ['test'=>$test]);
+	});
+
+
+	
+
+});
+
+
+
+
+
+
+
+/*Route::get('/{locale?}', function ($locale = null) {
 	App::setLocale($locale);
     return view('front.index');
 });
@@ -40,3 +74,4 @@ Route::group(['prefix' => $lng], function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+*/
