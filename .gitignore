@@ -12,6 +12,7 @@
 /resources/views/home.blade.php
 /resources/views/welcome.blade.php
 /nbproject
+/database/old_migration
 /.idea
 /.vagrant
 Homestead.json

@@ -13,8 +13,10 @@
 
 
 
-
-// app/Http/routes.php
+Route::get('/', function(){
+	LaravelLocalization::setLocale('en');
+	return redirect()->route('/');
+});
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
